@@ -1,3 +1,27 @@
-.button {
-  display: inline-flex;
+.container{
+    margin-bottom: 15px;
 }
+
+.title {
+    font-size: 13px;
+    text-transform: capitalize;
+}
+
+.chart {
+    background-color: #373E49;
+    height: 26px;
+    color: #fff;
+    font-size: 10px;
+}
+
+.from {
+    background-color: #00B85B;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
