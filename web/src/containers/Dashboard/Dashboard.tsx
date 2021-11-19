@@ -8,6 +8,7 @@ export const Dashboard: React.FunctionComponent = () => {
   return (
     <div className={styles.container}>
       <div className={styles.indexContainer}>
+        <span className={styles.indexTitle}>Green index</span>
         <IndexIndicator indexValue={80} />
       </div>
       <div className={styles.chartContainer}>
