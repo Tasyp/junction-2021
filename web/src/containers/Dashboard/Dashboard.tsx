@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import { BarChart, IndexIndicator } from '../../components';
+import { BarChart, IndexIndicator } from "../../components";
 
-import styles from './Dashboard.module.css';
+import styles from "./Dashboard.module.css";
 
 export const Dashboard: React.FunctionComponent = () => {
   return (

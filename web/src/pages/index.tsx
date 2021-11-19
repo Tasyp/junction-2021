@@ -6,7 +6,9 @@ const IndexPage: React.FunctionComponent = () => (
   <>
     <Dashboard />
     <style global jsx>{`
-      html, body, #__next {
+      html,
+      body,
+      #__next {
         width: 100%;
         height: 100%;
         padding: 0;
