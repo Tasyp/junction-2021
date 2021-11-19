@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {BarChart} from "../components";
 
 const IndexPage: React.FunctionComponent = () => (

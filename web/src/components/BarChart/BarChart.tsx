@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from "./BarChart.module.css";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 }
 
 export const BarChart: React.FunctionComponent<Props> = ({title, from, to}) => {
-    const filledAmount =`${getFilledAmount(from, to)}%`
+    const filledAmount =`${getFilledAmount(from, to)}%`;
 
     return (
         <div className={styles.container}>
@@ -22,4 +23,4 @@ export const BarChart: React.FunctionComponent<Props> = ({title, from, to}) => {
     );
 };
 
-const getFilledAmount = (from: number, to: number): number => from * 100 / to
+const getFilledAmount = (from: number, to: number): number => from * 100 / to;
