@@ -3,8 +3,9 @@
 }
 
 .indexContainer {
-  background: url("../../../public/background.png");
+  background: url("../../../public/background-4k.png");
   background-size: cover;
+  background-position: center;
   height: 40%;
   display: flex;
   justify-content: center;
