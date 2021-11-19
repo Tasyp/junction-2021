@@ -1,16 +1,20 @@
 import React from "react";
 
-import { BarChart, IndexIndicator } from "../components";
+import { Dashboard } from "../containers";
 
 const IndexPage: React.FunctionComponent = () => (
-  <div>
-    <IndexIndicator />
-    <div style={{ background: "rgba(196, 196, 196, 0.1)" }}>
-      <BarChart title={"neighborhood"} from={25} to={50} />
-      <BarChart title={"country"} from={33} to={50} />
-      <BarChart title={"Sixfold (company-wide)"} from={25} to={100} />
-    </div>
-  </div>
+  <>
+    <Dashboard />
+    <style global jsx>{`
+      html, body, #__next {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+    `}</style>
+  </>
 );
 
 export default IndexPage;
