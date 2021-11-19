@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import { ExampleContainer } from '../containers'
+import { ExampleContainer } from '../containers';
 
 const IndexPage: React.FunctionComponent = () => (
   <ExampleContainer />
-)
+);
 
-export default IndexPage
+export default IndexPage;
