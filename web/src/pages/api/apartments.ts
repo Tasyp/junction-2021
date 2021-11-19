@@ -10,11 +10,15 @@ export default function handler(
     },
     badges: [
       {
-        name: "November challenge",
+        name: "november_challenge",
+        title: "November Challenge",
+        description: "Reduce water usage by 500 liters",
         received_at: "2020-01-01T09:00:18",
       },
       {
-        name: "December challenge",
+        name: "december_challenge",
+        title: "December Challenge",
+        description: "Reduce water usage by 400 liters",
       },
     ],
     people_count: 3,
