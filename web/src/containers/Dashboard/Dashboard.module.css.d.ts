@@ -1,7 +1,7 @@
 declare const styles: {
   readonly "container": string;
-  readonly "line": string;
-  readonly "indicator": string;
+  readonly "indexContainer": string;
+  readonly "chartContainer": string;
 };
 export = styles;
 
