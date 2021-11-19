@@ -14,7 +14,8 @@
     "lint": "eslint --ext .tsx,.ts src/",
     "fix": "eslint --fix --ext .tsx,.ts src/",
     "type-check": "tsc",
-    "generate-css-types": "tcm src"
+    "generate-css-types": "tcm src",
+    "generate-css-types:watch": "tcm src -w"
   },
   "dependencies": {
     "classnames": "^2.2.6",
