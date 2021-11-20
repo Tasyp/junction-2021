@@ -1,18 +1,14 @@
 import React from "react";
 
-import { Apartment, getApartmentServerSideProps } from "../lib/api";
+import { Apartment, getApartmentServerSideProps } from "../../lib/api";
+import { MyConsumptionContainer } from "../../containers/MyConsumption";
 
 interface Props {
   apartment: Apartment;
 }
 
 function MyConsumptionPage({ apartment }: Props) {
-  return (
-    <>
-      <h1>Achievements {apartment.people_count}</h1>
-      <div>dsa</div>
-    </>
-  );
+  return <MyConsumptionContainer apartment={apartment} />;
 }
 
 export const getServerSideProps = getApartmentServerSideProps;
