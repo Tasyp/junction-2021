@@ -5,7 +5,11 @@ import { Apartment } from "../../lib/api";
 
 import styles from "./Dashboard.module.css";
 
-export const Dashboard = ({ apartment }: { apartment: Apartment }) => {
+interface Props {
+  apartment: Apartment;
+}
+
+export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
   return (
     <div className={styles.container}>
       <div className={styles.indexContainer}>
