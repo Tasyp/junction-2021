@@ -3,8 +3,8 @@ import React from "react";
 import { BarChart, IndexIndicator } from "../../components";
 import { Apartment } from "../../lib/api";
 
-import { Badges } from "../../components/Badge";
-import { Type } from "../../components/Badge/Badges";
+import { Badges } from "../../components/Badges";
+import { Type } from "../../components/Badges/Badges";
 
 import styles from "./Dashboard.module.css";
 

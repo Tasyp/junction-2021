@@ -17,7 +17,7 @@ export enum Type {
   YOU_ARE_THE_BEST = "YOU_ARE_THE_BEST",
 }
 
-const badgeContent: { [key in Type]: { img: string; title: string } } = {
+export const badgeContent: { [key in Type]: { img: string; title: string } } = {
   DECEMBER_CHALLENGE: {
     img: "/december-challenge.png",
     title: "december challenge",
