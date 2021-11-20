@@ -11,5 +11,6 @@ declare const styles: {
   readonly amount: string;
   readonly progress: string;
   readonly progressBar: string;
+  readonly iconContainer: string;
 };
 export = styles;
