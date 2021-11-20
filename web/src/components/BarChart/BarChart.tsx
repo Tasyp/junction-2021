@@ -6,17 +6,19 @@ interface Props {
   title: string;
   from: number;
   to: number;
+  className?: string;
 }
 
 export const BarChart: React.FunctionComponent<Props> = ({
   title,
   from,
   to,
+  className,
 }) => {
   const filledAmount = `${getFilledAmount(from, to)}%`;
 
   return (
-    <div className={styles.container}>
+    <div className={className}>
       <span className={styles.title}>{title}</span>
       <div className={styles.chart}>
         <div className={styles.from} style={{ width: filledAmount }}>
