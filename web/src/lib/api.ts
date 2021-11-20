@@ -1,57 +1,109 @@
+import { NextPageContext } from "next";
+
 import { baseEndpointAPI } from "../config";
+
+import { takeFirst } from "./util";
 
 export const apartmentData = {
   apartmentID: "99",
+  people_count: 3,
   statistics: {
     green_index: 30,
   },
   badges: [
     {
-      name: "november_challenge",
-      title: "November Challenge",
-      description: "Reduce water usage by 500 liters",
-      received_at: "2020-01-01T09:00:18",
-    },
-    {
       name: "december_challenge",
       title: "December Challenge",
+      img: "/december-challenge.png",
+      description: "Reduce water usage by 500 liters",
+      received_at: "2020-01-01T09:00:18",
+      progress: 10,
+    },
+    {
+      name: "monthly_challenge",
+      title: "Monthly Challenge",
+      img: "/monthly-challenge.png",
       description: "Reduce water usage by 400 liters",
+      progress: 24,
+    },
+    {
+      name: "perfect_week",
+      title: "Perfect Week",
+      img: "/perfect-week.png",
+      description: "Reduce water usage by 400 liters",
+      progress: 70,
+    },
+    {
+      name: "new_record",
+      title: "New Record",
+      img: "/new-record.png",
+      description: "Reduce water usage by 400 liters",
+      progress: 10,
+    },
+    {
+      name: "you_are_the_best",
+      title: "You are the Best",
+      img: "/you-are-the-best.png",
+      description: "Reduce water usage by 400 liters",
+      progress: 88,
     },
   ],
-  people_count: 3,
-  devices: {
-    name: "Kitchen dishwasher",
-    measurements: [
-      {
-        consumption: "11.569686",
-        temp: "35.99203",
-        flow_time: "56.762955",
-        power_consumption: "0.4183294",
-        timestamp: "2020-01-01T09:00:18",
+  devices: [
+    {
+      order: 1,
+      name: "Dishwasher",
+      statistics: {
+        week_pct: 10,
+        month_pct: 30,
+        year_pct: 40,
       },
-      {
-        consumption: "56.70452",
-        temp: "39.444153",
-        flow_time: "287.90256",
-        power_consumption: "2.2786624",
-        timestamp: "2020-01-01T10:50:50",
+    },
+    {
+      order: 2,
+      name: "Shower",
+      statistics: {
+        week_pct: 70,
+        month_pct: 10,
+        year_pct: 40,
       },
-      {
-        consumption: "36.05037",
-        temp: "39.709408",
-        flow_time: "215.50906",
-        power_consumption: "1.4598348",
-        timestamp: "2020-01-01T23:34:59",
+    },
+    {
+      order: 3,
+      name: "Toilet",
+      statistics: {
+        week_pct: 14,
+        month_pct: 21,
+        year_pct: 34,
       },
-      {
-        consumption: "24.071253",
-        temp: "40.37769",
-        flow_time: "148.69801",
-        power_consumption: "0.99351615",
-        timestamp: "2020-01-03T23:47:24",
+    },
+    {
+      order: 4,
+      name: "Kitchen faucet",
+      statistics: {
+        week_pct: 45,
+        month_pct: 14,
+        year_pct: 42,
       },
-    ],
-  },
+    },
+    {
+      order: 5,
+      name: "Washing machine",
+      statistics: {
+        week_pct: 45,
+        month_pct: 22,
+        year_pct: 56,
+      },
+    },
+    {
+      order: 6,
+      name: "Bathroom faucet",
+      statistics: {
+        week_pct: 5,
+        month_pct: 12,
+        year_pct: 66,
+      },
+    },
+  ],
 };
 
 export type Apartment = typeof apartmentData;
@@ -87,4 +139,13 @@ export async function fetchApartment(
       apartment: [],
     };
   }
+}
+
+export async function getApartmentServerSideProps({ query }: NextPageContext) {
+  const { apartmentID } = query;
+
+  const data = await fetchApartment(takeFirst(apartmentID));
+  return {
+    props: { apartment: data.apartment },
+  };
 }
