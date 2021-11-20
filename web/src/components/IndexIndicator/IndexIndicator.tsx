@@ -20,7 +20,6 @@ export const IndexIndicator: React.FunctionComponent<Props> = ({
         [styles.yellow]: isYellow,
       })}
     >
-      <div className={styles.line} />
       <div className={styles.indicator}>{indexValue}%</div>
     </div>
   );
