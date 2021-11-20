@@ -1,45 +1,20 @@
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
 
+import { Apartment } from "../../lib/api";
+
 import styles from "./IndexCoins.module.css";
 
-const data = [
-  {
-    name: "Monday",
-    index: 30,
-  },
-  {
-    name: "Tuesday",
-    index: 50,
-  },
-  {
-    name: "Wednesday",
-    index: 60,
-  },
-  {
-    name: "Thursday",
-    index: 10,
-  },
-  {
-    name: "Friday",
-    index: 30,
-  },
-  {
-    name: "Saturday",
-    index: 30,
-  },
-  {
-    name: "Sunday",
-    index: 30,
-  },
-];
+interface Props {
+  apartment: Apartment;
+}
 
-export const IndexCoins: React.FunctionComponent = () => {
+export const IndexCoins: React.FunctionComponent<Props> = ({ apartment }) => {
   return (
     <div className={styles.container}>
       <span className={styles.title}>Amount of coins</span>
       <div className={styles.coin}>
-        <span className={styles.coinCount}>7523</span>
+        <span className={styles.coinCount}>{apartment.green_coin_count}</span>
         <img className={styles.coinIcon} src="/green-index.png" />
       </div>
       <div className={styles.tip}>
@@ -57,7 +32,7 @@ export const IndexCoins: React.FunctionComponent = () => {
           width="100%"
           height="100%"
         >
-          <BarChart data={data}>
+          <BarChart data={apartment.weekly_consumption}>
             <XAxis dataKey="name" />
             <YAxis />
             <Bar dataKey="index" fill="#345587" />
