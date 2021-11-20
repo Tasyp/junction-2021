@@ -120,7 +120,7 @@ export function generateApartment(indexLimit: number = 100) {
       },
       {
         order: 4,
-        name: "Kitchen faucet",
+        name: "Kitchen",
         statistics: {
           week_pct: 45,
           month_pct: 14,
@@ -129,7 +129,7 @@ export function generateApartment(indexLimit: number = 100) {
       },
       {
         order: 5,
-        name: "Washing machine",
+        name: "Washing",
         statistics: {
           week_pct: 45,
           month_pct: 22,
@@ -138,7 +138,7 @@ export function generateApartment(indexLimit: number = 100) {
       },
       {
         order: 6,
-        name: "Bathroom faucet",
+        name: "Bathroom",
         statistics: {
           week_pct: 5,
           month_pct: 12,
