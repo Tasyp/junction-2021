@@ -1,7 +1,5 @@
 import React from "react";
 
-import Image from "next/image";
-
 import { BarChart, IndexIndicator } from "../../components";
 import { Apartment } from "../../lib/api";
 
@@ -46,10 +44,6 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
           from={25}
           to={100}
         />
-      </div>
-      <div className={styles.gameContainer}>
-        <h2 className={styles.gameHeading}>Start Playing</h2>
-        <Image layout="fill" src="/game-splash.png" />
       </div>
     </div>
   );

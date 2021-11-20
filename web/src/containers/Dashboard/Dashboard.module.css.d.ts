@@ -5,7 +5,5 @@ declare const styles: {
   readonly achievementsContainer: string;
   readonly chartContainer: string;
   readonly bar: string;
-  readonly gameContainer: string;
-  readonly gameHeading: string;
 };
 export = styles;
