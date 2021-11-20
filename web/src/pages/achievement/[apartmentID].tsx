@@ -1,6 +1,8 @@
 import React from "react";
-import { Apartment, fetchApartment } from "../../lib/api";
+
 import { NextPageContext } from "next";
+
+import { Apartment, fetchApartment } from "../../lib/api";
 import { takeFirst } from "../../lib/util";
 
 interface Props {
@@ -24,6 +26,5 @@ export async function getServerSideProps({ query }: NextPageContext) {
     props: { apartment: data.apartment },
   };
 }
-
 
 export default AchievementPage;

@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+
 import { apartmentData } from "../../../lib/api";
 
 export default function handler(
