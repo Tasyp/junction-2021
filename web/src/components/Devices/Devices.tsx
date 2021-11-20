@@ -24,9 +24,6 @@ export const Devices: React.FunctionComponent<Props> = ({ devices, time }) => {
           <ProgressBar amount={statistics[time]} />
         </div>
       ))}
-      <span className={styles.indexCaption}>
-        *Learn more about my consuption index
-      </span>
     </div>
   );
 };
