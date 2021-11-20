@@ -1,1 +1,1 @@
-export { GameButton } from "./BarChart";
+export { GameButton } from "./GameButton";

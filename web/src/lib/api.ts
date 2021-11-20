@@ -1,6 +1,7 @@
 import { baseEndpointAPI } from "../config";
 
 export const apartmentData = {
+  apartmentID: "99",
   statistics: {
     green_index: 30,
   },
