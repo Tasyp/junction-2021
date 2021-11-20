@@ -1,11 +1,12 @@
 import React from "react";
 
+import Image from "next/image";
+
 import { BarChart, IndexIndicator } from "../../components";
 import { Apartment } from "../../lib/api";
 
 import { Badges } from "../../components/Badge";
 import { Type } from "../../components/Badge/Badges";
-import Image from "next/image";
 
 import styles from "./Dashboard.module.css";
 
@@ -46,10 +47,10 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
           to={100}
         />
       </div>
-        <div className={styles.gameContainer}>
-            <h2 className={styles.gameHeading}>Start Playing</h2>
-          <Image layout='fill' src='/game-splash.png' />
-        </div>
+      <div className={styles.gameContainer}>
+        <h2 className={styles.gameHeading}>Start Playing</h2>
+        <Image layout="fill" src="/game-splash.png" />
+      </div>
     </div>
   );
 };

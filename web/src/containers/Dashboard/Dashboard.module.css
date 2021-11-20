@@ -40,16 +40,16 @@
   margin-bottom: 8px;
 }
 
-.gameContainer{
+.gameContainer {
   height: 192px;
-  width:100%;
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.gameHeading{
+.gameHeading {
   font-family: "Montserrat", sans-serif;
   color: #fff;
   position: relative;
