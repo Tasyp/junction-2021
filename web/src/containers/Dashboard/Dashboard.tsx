@@ -12,7 +12,9 @@ interface Props {
 }
 
 export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
-  const { statistics: { week } } = apartment;
+  const {
+    statistics: { week },
+  } = apartment;
   return (
     <div className={styles.container}>
       <div className={styles.indexContainer}>

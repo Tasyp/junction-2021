@@ -18,6 +18,16 @@ export const MyConsumptionContainer: React.FunctionComponent<Props> = ({
   const [time, setTime] = React.useState<"week_pct" | "month_pct" | "year_pct">(
     "week_pct"
   );
+  const indexValue: 'week' | 'month' | 'year' = React.useMemo( () => {
+    switch (time) {
+      case "week_pct":
+        return "week"
+      case "month_pct":
+        return "month"
+      case "year_pct":
+        return "year"
+    }
+  }, [time])
 
   return (
     <>
@@ -26,7 +36,7 @@ export const MyConsumptionContainer: React.FunctionComponent<Props> = ({
         <Devices devices={apartment.devices} time={time} />
         <div className={styles.indexContainer}>
           <h2 className={styles.indexHeading}>Overall index*</h2>
-          <IndexIndicator indexValue={apartment.statistics.green_index} />
+          <IndexIndicator indexValue={apartment.statistics[indexValue].green_index} />
           <p className={styles.timeControls}>
             <span
               className={classnames(styles.timeControl, {
