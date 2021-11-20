@@ -5,6 +5,7 @@ import { Apartment, getApartmentServerSideProps } from "../lib/api";
 
 interface Props {
   apartment: Apartment;
+  index: string;
 }
 
 function IndexPage({ apartment }: Props) {
