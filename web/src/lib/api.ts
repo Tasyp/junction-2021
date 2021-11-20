@@ -4,15 +4,21 @@ import { baseEndpointAPI } from "../config";
 
 import { randomInRange, takeFirst } from "./util";
 
+const genIndexData = () => ({
+  green_index: randomInRange(5, 100),
+  neighborhood_index: randomInRange(20, 70),
+  country_index: randomInRange(10, 30),
+  company_index: randomInRange(30, 25),
+});
+
 export const apartmentData = {
   apartmentID: "99",
   people_count: 3,
   green_coin_count: randomInRange(1000, 3000),
   statistics: {
-    green_index: randomInRange(5, 100),
-    neighborhood_index: randomInRange(20, 70),
-    country_index: randomInRange(10, 30),
-    company_index: randomInRange(30, 25),
+    week: genIndexData(),
+    month: genIndexData(),
+    year: genIndexData(),
   },
   weekly_consumption: [
     {
