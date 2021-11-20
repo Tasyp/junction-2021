@@ -43,7 +43,7 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
         />
         <BarChart
           className={styles.bar}
-          title={"Sixfold (company-wide)"}
+          title={"Global"}
           from={week.company_index}
           to={100}
         />
