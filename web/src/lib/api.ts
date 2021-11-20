@@ -156,11 +156,11 @@ interface ApartmentFetchResponse {
 
 export async function fetchApartment(
   id: string,
-  indexLimit: number,
+  indexLimit: number
 ): Promise<ApartmentFetchResponse> {
   try {
     const url = new URL(`/api/apartments/${id}`, baseEndpointAPI);
-    url.searchParams.append('indexLimit', indexLimit.toString());
+    url.searchParams.append("indexLimit", indexLimit.toString());
 
     const response = await fetch(url.toString());
     const data = await response.json();
@@ -187,7 +187,7 @@ export async function fetchApartment(
 export async function getApartmentServerSideProps({ query }: NextPageContext) {
   const { apartmentID, indexLimit } = query;
 
-  const indexNumber = arrayStrToNumber(indexLimit, 100)
+  const indexNumber = arrayStrToNumber(indexLimit, 100);
   const data = await fetchApartment(takeFirst(apartmentID), indexNumber);
   return {
     props: { apartment: data.apartment, index: indexNumber },
