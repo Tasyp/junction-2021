@@ -22,27 +22,25 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
   return (
     <div className={styles.container}>
       <div
+        onClick={() => (window.location.href = "/coins")}
         className={classnames(styles.indexContainer, {
           [styles.redState]: isRed,
           [styles.yellowState]: isYellow,
         })}
       >
-        <a
-          className={classnames(
-            styles.invisibleLink,
-            styles.indexLinkContainer
-          )}
-          href="/my-consumption/666"
-        >
+        <div className={classnames(styles.indexLinkContainer)}>
           <span className={styles.indexTitle}>Green Index</span>
           <IndexIndicator indexValue={week.green_index} />
-        </a>
+        </div>
         <div className={styles.coinsButton}>
           <CoinsButton coinCount={apartment.green_coin_count} />
         </div>
       </div>
       <AchievementsContainer badges={apartmentData.badges} />
-      <div className={styles.chartContainer}>
+      <div
+        onClick={() => (window.location.href = "/my-consumption/666")}
+        className={styles.chartContainer}
+      >
         <BarChart
           className={styles.bar}
           title={"neighborhood"}
