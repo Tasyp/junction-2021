@@ -2,6 +2,9 @@
   font-size: 13px;
   text-transform: capitalize;
   font-family: "Inter", sans-serif;
+  color: #373e49;
+  margin-bottom: 4px;
+  display: block;
 }
 
 .chart {

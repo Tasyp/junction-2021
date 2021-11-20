@@ -22,12 +22,14 @@ export const Achievements: React.FunctionComponent<Props> = ({
     <div className={styles.achievementsContainer}>
       {achievements.map(({ name, title, img, description, progress }) => (
         <div key={name} className={styles.achievementContainer}>
-          <Image
-            width={85}
-            height={77}
-            className={styles.badgeImage}
-            src={img}
-          />
+          <div className={styles.iconContainer}>
+            <Image
+              width={85}
+              height={77}
+              className={styles.badgeImage}
+              src={img}
+            />
+          </div>
           <div className={styles.achievementText}>
             <p className={styles.title}>{title}</p>
             <p className={styles.description}>{description}</p>

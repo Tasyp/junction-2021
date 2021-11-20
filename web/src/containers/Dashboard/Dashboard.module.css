@@ -5,21 +5,43 @@
 }
 
 .indexContainer {
-  background: url("../../../public/background-4k.png");
+  background: url("../../../public/background-green-index.png");
   background-size: cover;
   background-position: center;
+  min-height: 260px;
   height: 45%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  position: relative;
+  cursor: pointer;
+}
+
+.indexContainer.redState {
+  background: url("../../../public/background-red-index.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.indexContainer.yellowState {
+  background: url("../../../public/background-yellow-index.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.indexLinkContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
+  flex: 1;
 }
 
 .coinsButton {
-  position: absolute;
-  right: 25px;
-  bottom: 25px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
 }
 
 .indexTitle {
@@ -27,12 +49,6 @@
   color: #ffffff;
   margin-bottom: 16px;
   font-family: "Montserrat", sans-serif;
-}
-
-.achievementsContainer {
-  padding: 16px;
-  background: rgba(196, 196, 196, 0.1);
-  flex-grow: 1;
 }
 
 .invisibleLink {
@@ -47,6 +63,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .bar {

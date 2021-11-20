@@ -1,7 +1,8 @@
+import classnames from "classnames";
 import React from "react";
 
 import { BarChart, CoinsButton, IndexIndicator } from "../../components";
-import { Apartment, apartmentData } from "../../lib/api";
+import { Apartment } from "../../lib/api";
 
 import { AchievementsContainer } from "../Achievements/Achievements";
 
@@ -15,19 +16,27 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
   const {
     statistics: { week },
   } = apartment;
+
+  const isRed = week.green_index < 30;
+  const isYellow = week.green_index > 30 && week.green_index < 70;
   return (
     <div className={styles.container}>
-      <div className={styles.indexContainer}>
-        <a className={styles.invisibleLink} href="/my-consumption/666">
-          <span className={styles.indexTitle}>Green index</span>
+      <div
+        onClick={() => (window.location.href = "/coins")}
+        className={classnames(styles.indexContainer, {
+          [styles.redState]: isRed,
+          [styles.yellowState]: isYellow,
+        })}
+      >
+        <div className={classnames(styles.indexLinkContainer)}>
+          <span className={styles.indexTitle}>Green Index</span>
           <IndexIndicator indexValue={week.green_index} />
-        </a>
-        <CoinsButton
-          coinCount={apartment.green_coin_count}
-          className={styles.coinsButton}
-        />
+        </div>
+        <div className={styles.coinsButton}>
+          <CoinsButton coinCount={apartment.green_coin_count} />
+        </div>
       </div>
-      <AchievementsContainer badges={apartmentData.badges} />
+      <AchievementsContainer badges={apartment.badges} />
       <div className={styles.chartContainer}>
         <BarChart
           className={styles.bar}

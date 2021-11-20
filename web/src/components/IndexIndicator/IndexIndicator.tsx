@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import React from "react";
 
 import styles from "./IndexIndicator.module.css";
@@ -9,9 +10,16 @@ interface Props {
 export const IndexIndicator: React.FunctionComponent<Props> = ({
   indexValue,
 }) => {
+  const isRed = indexValue < 30;
+  const isYellow = indexValue > 30 && indexValue < 70;
+
   return (
-    <div className={styles.container}>
-      <div className={styles.line} />
+    <div
+      className={classnames(styles.container, {
+        [styles.red]: isRed,
+        [styles.yellow]: isYellow,
+      })}
+    >
       <div className={styles.indicator}>{indexValue}%</div>
     </div>
   );
