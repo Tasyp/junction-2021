@@ -6,6 +6,5 @@ declare const styles: {
   readonly amount: string;
   readonly progress: string;
   readonly progressBar: string;
-  readonly indexCaption: string;
 };
 export = styles;
