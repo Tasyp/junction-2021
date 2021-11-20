@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import React from "react";
 
 import { BarChart, CoinsButton, IndexIndicator } from "../../components";
@@ -16,11 +17,19 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
   return (
     <div className={styles.container}>
       <div className={styles.indexContainer}>
-        <a className={styles.invisibleLink} href="/my-consumption">
-          <span className={styles.indexTitle}>Green index</span>
+        <a
+          className={classnames(
+            styles.invisibleLink,
+            styles.indexLinkContainer
+          )}
+          href="/my-consumption"
+        >
+          <span className={styles.indexTitle}>Green Index</span>
           <IndexIndicator indexValue={apartment.statistics.green_index} />
         </a>
-        <CoinsButton coinCount={apartment.green_coin_count} className={styles.coinsButton} />
+        <div className={styles.coinsButton}>
+          <CoinsButton coinCount={apartment.green_coin_count} />
+        </div>
       </div>
       <AchievementsContainer badges={apartmentData.badges} />
       <div className={styles.chartContainer}>
