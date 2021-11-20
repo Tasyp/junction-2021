@@ -4,5 +4,6 @@ declare const styles: {
   readonly timeControl: string;
   readonly timeActive: string;
   readonly container: string;
+  readonly graph: string;
 };
 export = styles;

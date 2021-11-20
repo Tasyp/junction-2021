@@ -1,6 +1,13 @@
 import React from "react";
-
 import classnames from "classnames";
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  ResponsiveContainer,
+} from "recharts";
 
 import { Devices } from "../../components/Devices";
 import { Apartment } from "../../lib/api";
@@ -17,6 +24,11 @@ export const MyConsumptionContainer: React.FunctionComponent<Props> = ({
   const [time, setTime] = React.useState<"week_pct" | "month_pct" | "year_pct">(
     "week_pct"
   );
+
+  const data = apartment.devices.map((device) => ({
+    subject: device.name,
+    index: device.order,
+  }));
 
   return (
     <>
@@ -51,6 +63,22 @@ export const MyConsumptionContainer: React.FunctionComponent<Props> = ({
             Year
           </span>
         </p>
+      </div>
+      <div className={styles.graph}>
+        <ResponsiveContainer width="100%" height="100%">
+          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+            <PolarGrid />
+            <PolarAngleAxis dataKey="subject" />
+            <PolarRadiusAxis />
+            <Radar
+              name="Mike"
+              dataKey="index"
+              stroke="#345587"
+              fill="#345587"
+              fillOpacity={0.9}
+            />
+          </RadarChart>
+        </ResponsiveContainer>
       </div>
     </>
   );
