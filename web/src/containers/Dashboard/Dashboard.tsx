@@ -2,6 +2,9 @@ import React from "react";
 
 import { BarChart, IndexIndicator } from "../../components";
 
+import { Badges } from "../../components/Badge";
+import { Type } from "../../components/Badge/Badges";
+
 import styles from "./Dashboard.module.css";
 
 export const Dashboard: React.FunctionComponent = () => {
@@ -11,7 +14,17 @@ export const Dashboard: React.FunctionComponent = () => {
         <span className={styles.indexTitle}>Green index</span>
         <IndexIndicator indexValue={80} />
       </div>
-      <div className={styles.achievemntsContainer}></div>
+      <div className={styles.achievementsContainer}>
+        <Badges
+          badges={[
+            { type: Type.DECEMBER_CHALLENGE },
+            { type: Type.MONTHLY_CHALLENGE },
+            { type: Type.PERFECT_WEEK },
+            { type: Type.NEW_RECORD },
+            { type: Type.YOU_ARE_THE_BEST },
+          ]}
+        />
+      </div>
       <div className={styles.chartContainer}>
         <BarChart
           className={styles.bar}

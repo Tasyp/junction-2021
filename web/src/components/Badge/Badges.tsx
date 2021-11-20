@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import styles from "./Badges.module.css";
 
@@ -9,32 +10,51 @@ interface Props {
 }
 
 export enum Type {
-  NOVEMBER_CHALLENGE = "NOVEMBER_CHALLENGE",
+  DECEMBER_CHALLENGE = "DECEMBER_CHALLENGE",
+  MONTHLY_CHALLENGE = "MONTHLY_CHALLENGE",
+  PERFECT_WEEK = "PERFECT_WEEK",
+  NEW_RECORD = "NEW_RECORD",
+  YOU_ARE_THE_BEST = "YOU_ARE_THE_BEST",
 }
 
-const badgeContent: { [key in Type]: {img: string; title: string} } = {
-    NOVEMBER_CHALLENGE: {img: 'http://csshexagon.com/img/meow.jpg', title: 'DecemberChallenge'}
-}
-
-
-export const Badges: React.FunctionComponent<Props> = ({ badges }) => {
-  return (
-    <div className={styles.container}>
-      {badges.map(({ type }) => {
-        switch (type) {
-          case Type.NOVEMBER_CHALLENGE:
-            return (<div className={styles.badgeContainer}>
-              <div className={styles.badge} key={type} style={{backgroundImage: `url(${badgeContent[type].img})`}}>
-                <div className={styles.badgeTop} />
-                <div className={styles.badgeBottom} />
-              </div>
-              <div className={styles.badgeTitle}>{badgeContent[type].title}</div>
-            </div>
-            );
-          default:
-            return <div />;
-        }
-      })}
-    </div>
-  );
+const badgeContent: { [key in Type]: { img: string; title: string } } = {
+  DECEMBER_CHALLENGE: {
+    img: "/december-challenge.png",
+    title: "december challenge",
+  },
+  MONTHLY_CHALLENGE: {
+    img: "/monthly-challenge.png",
+    title: "monthly challenge",
+  },
+  PERFECT_WEEK: {
+    img: "/perfect-week.png",
+    title: "monthly challenge",
+  },
+  NEW_RECORD: {
+    img: "/new-record.png",
+    title: "new record",
+  },
+  YOU_ARE_THE_BEST: {
+    img: "/you-are-the-best.png",
+    title: "you are the best",
+  },
 };
+
+export const Badges: React.FunctionComponent<Props> = ({ badges }) => (
+  <div className={styles.container}>
+    <h2 className={styles.title}>Join a Badge Challenge</h2>
+    <div className={styles.badgesContainer}>
+      {badges.map(({ type }) => (
+        <div key={type} className={styles.badgeContainer}>
+          <Image
+            width={50}
+            height={50}
+            className={styles.badgeImage}
+            src={badgeContent[type].img}
+          />
+          <p className={styles.badgeTitle}>{badgeContent[type].title}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
