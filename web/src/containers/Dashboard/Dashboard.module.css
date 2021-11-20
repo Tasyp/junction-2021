@@ -28,7 +28,7 @@
   flex-grow: 1;
 }
 
-.achievementsContainer a {
+.achievementsContainer a, .indexContainer a {
   text-decoration: none;
   cursor: pointer;
   color: inherit;

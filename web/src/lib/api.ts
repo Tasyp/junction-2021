@@ -1,3 +1,6 @@
+import { NextPageContext } from "next";
+
+import { takeFirst } from "./util";
 import { baseEndpointAPI } from "../config";
 
 export const apartmentData = {
@@ -87,4 +90,13 @@ export async function fetchApartment(
       apartment: [],
     };
   }
+}
+
+export async function getApartmentServerSideProps({ query }: NextPageContext) {
+  const { apartmentID } = query;
+
+  const data = await fetchApartment(takeFirst(apartmentID));
+  return {
+    props: { apartment: data.apartment },
+  };
 }
