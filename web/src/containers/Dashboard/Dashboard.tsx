@@ -1,37 +1,15 @@
 import React from "react";
-import Link from "next/link";
 
 import { BarChart, IndexIndicator } from "../../components";
-import { Apartment } from "../../lib/api";
+import { Apartment, apartmentData } from "../../lib/api";
 
-import { Badges } from "../../components/Badge";
-import { Type } from "../../components/Badge/Badges";
+import { AchievementsContainer } from "../Achievements/Achievements";
 
 import styles from "./Dashboard.module.css";
 
 interface Props {
   apartment: Apartment;
 }
-
-const AchivementsContainer = () => {
-  return (
-    <div className={styles.achievementsContainer}>
-      <Link href="/achievement/666">
-        <a>
-          <Badges
-            badges={[
-              { type: Type.DECEMBER_CHALLENGE },
-              { type: Type.MONTHLY_CHALLENGE },
-              { type: Type.PERFECT_WEEK },
-              { type: Type.NEW_RECORD },
-              { type: Type.YOU_ARE_THE_BEST },
-            ]}
-          />
-        </a>
-      </Link>
-    </div>
-  );
-};
 
 export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
   return (
@@ -42,7 +20,7 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
           <IndexIndicator indexValue={apartment.statistics.green_index} />
         </a>
       </div>
-      <AchivementsContainer />
+      <AchievementsContainer badges={apartmentData.badges}  />
       <div className={styles.chartContainer}>
         <BarChart
           className={styles.bar}

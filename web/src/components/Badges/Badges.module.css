@@ -13,7 +13,6 @@
   text-align: center;
   margin: 8px 0 32px;
 }
-
 .badgesContainer {
   display: flex;
   width: 100%;
@@ -36,7 +35,6 @@
   line-height: 12px;
   -moz-hyphens: auto;
   hyphens: auto;
-  font-family: Montserrat;
 }
 
 .badgeTitle:first-letter {
