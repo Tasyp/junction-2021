@@ -27,7 +27,7 @@ export const MyConsumptionContainer: React.FunctionComponent<Props> = ({
 
   const data = apartment.devices.map((device) => ({
     subject: device.name,
-    index: device.order,
+    index: device.statistics[time],
   }));
 
   return (
