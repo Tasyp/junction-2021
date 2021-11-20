@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BarChart, IndexIndicator } from "../../components";
+import { BarChart, CoinsButton, IndexIndicator } from "../../components";
 import { Apartment, apartmentData } from "../../lib/api";
 
 import { AchievementsContainer } from "../Achievements/Achievements";
@@ -16,11 +16,11 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
   return (
     <div className={styles.container}>
       <div className={styles.indexContainer}>
-        <a href="/my-consumption">
+        <a className={styles.invisibleLink} href="/my-consumption">
           <span className={styles.indexTitle}>Green index</span>
           <IndexIndicator indexValue={apartment.statistics.green_index} />
         </a>
-        <a href="/coins">Coins</a>
+        <CoinsButton coinCount={7726} className={styles.coinsButton} />
       </div>
       <AchievementsContainer badges={apartmentData.badges} />
       <div className={styles.chartContainer}>
