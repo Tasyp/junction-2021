@@ -1,5 +1,4 @@
 import { baseEndpointAPI } from "../config";
-import { BadgeType } from "../components/Badges/Badges";
 
 export const apartmentData = {
   apartmentID: "99",
