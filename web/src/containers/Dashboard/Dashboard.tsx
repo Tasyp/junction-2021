@@ -11,7 +11,7 @@ export const Dashboard: React.FunctionComponent = () => {
         <span className={styles.indexTitle}>Green index</span>
         <IndexIndicator indexValue={80} />
       </div>
-      <div className={styles.achievemntsContainer}>Placeholder</div>
+      <div className={styles.achievemntsContainer}></div>
       <div className={styles.chartContainer}>
         <BarChart
           className={styles.bar}
