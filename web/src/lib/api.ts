@@ -1,6 +1,7 @@
 import { NextPageContext } from "next";
 
 import { baseEndpointAPI } from "../config";
+
 import { takeFirst } from "./util";
 
 export const apartmentData = {
@@ -47,55 +48,62 @@ export const apartmentData = {
       progress: 88,
     },
   ],
-  devices: [{
-    order: 1,
-    name: "Dishwasher",
-    statistics: {
-      week_pct: 10,
-      month_pct: 30,
-      year_pct: 40,
+  devices: [
+    {
+      order: 1,
+      name: "Dishwasher",
+      statistics: {
+        week_pct: 10,
+        month_pct: 30,
+        year_pct: 40,
+      },
     },
-  }, {
-    order: 2,
-    name: "Shower",
-    statistics: {
-      week_pct: 70,
-      month_pct: 10,
-      year_pct: 40,
+    {
+      order: 2,
+      name: "Shower",
+      statistics: {
+        week_pct: 70,
+        month_pct: 10,
+        year_pct: 40,
+      },
     },
-  }, {
-    order: 3,
-    name: "Toilet",
-    statistics: {
-      week_pct: 14,
-      month_pct: 21,
-      year_pct: 34,
+    {
+      order: 3,
+      name: "Toilet",
+      statistics: {
+        week_pct: 14,
+        month_pct: 21,
+        year_pct: 34,
+      },
     },
-  }, {
-    order: 4,
-    name: "Kitchen faucet",
-    statistics: {
-      week_pct: 45,
-      month_pct: 14,
-      year_pct: 42,
+    {
+      order: 4,
+      name: "Kitchen faucet",
+      statistics: {
+        week_pct: 45,
+        month_pct: 14,
+        year_pct: 42,
+      },
     },
-  }, {
-    order: 5,
-    name: "Washing machine",
-    statistics: {
-      week_pct: 45,
-      month_pct: 22,
-      year_pct: 56,
+    {
+      order: 5,
+      name: "Washing machine",
+      statistics: {
+        week_pct: 45,
+        month_pct: 22,
+        year_pct: 56,
+      },
     },
-  }, {
-    order: 6,
-    name: "Bathroom faucet",
-    statistics: {
-      week_pct: 5,
-      month_pct: 12,
-      year_pct: 66,
+    {
+      order: 6,
+      name: "Bathroom faucet",
+      statistics: {
+        week_pct: 5,
+        month_pct: 12,
+        year_pct: 66,
+      },
     },
-  }],
+  ],
 };
 
 export type Apartment = typeof apartmentData;
