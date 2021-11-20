@@ -8,6 +8,16 @@
     linear-gradient(0deg, #1abc9c 50%, #c4c4c4 50%);
 }
 
+.container.red {
+  background: linear-gradient(270deg, #d0021b 50%, transparent 50%),
+    linear-gradient(0deg, #d0021b 50%, #d0021b 50%);
+}
+
+.container.yellow {
+  background: linear-gradient(270deg, #ca6f00 50%, transparent 50%),
+    linear-gradient(0deg, #ca6f00 50%, #ca6f00 50%);
+}
+
 .line {
   position: relative;
   top: 5px;

@@ -16,9 +16,17 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
   const {
     statistics: { week },
   } = apartment;
+
+  const isRed = week.green_index < 30;
+  const isYellow = week.green_index > 30 && week.green_index < 70;
   return (
     <div className={styles.container}>
-      <div className={styles.indexContainer}>
+      <div
+        className={classnames(styles.indexContainer, {
+          [styles.redState]: isRed,
+          [styles.yellowState]: isYellow,
+        })}
+      >
         <a
           className={classnames(
             styles.invisibleLink,

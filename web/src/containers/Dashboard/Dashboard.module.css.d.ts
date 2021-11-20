@@ -1,6 +1,8 @@
 declare const styles: {
   readonly container: string;
   readonly indexContainer: string;
+  readonly redState: string;
+  readonly yellowState: string;
   readonly indexLinkContainer: string;
   readonly coinsButton: string;
   readonly indexTitle: string;
