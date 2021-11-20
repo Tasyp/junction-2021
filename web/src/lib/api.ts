@@ -1,6 +1,7 @@
 import { NextPageContext } from "next";
 
 import { baseEndpointAPI } from "../config";
+
 import { randomInRange, takeFirst } from "./util";
 
 export const apartmentData = {
