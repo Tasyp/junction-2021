@@ -1,18 +1,19 @@
 import React from "react";
 
 import { BarChart, IndexIndicator } from "../../components";
+import { Apartment } from "../../lib/api";
 
 import { Badges } from "../../components/Badge";
 import { Type } from "../../components/Badge/Badges";
 
 import styles from "./Dashboard.module.css";
 
-export const Dashboard: React.FunctionComponent = () => {
+export const Dashboard = ({ apartment }: { apartment: Apartment }) => {
   return (
     <div className={styles.container}>
       <div className={styles.indexContainer}>
         <span className={styles.indexTitle}>Green index</span>
-        <IndexIndicator indexValue={80} />
+        <IndexIndicator indexValue={apartment.statistics.green_index} />
       </div>
       <div className={styles.achievementsContainer}>
         <Badges
