@@ -1,4 +1,5 @@
 import { baseEndpointAPI } from "../config";
+import { BadgeType } from "../components/Badges/Badges";
 
 export const apartmentData = {
   apartmentID: "99",
@@ -7,14 +8,34 @@ export const apartmentData = {
   },
   badges: [
     {
-      name: "november_challenge",
-      title: "November Challenge",
+      name: "december_challenge",
+      title: "December Challenge",
+      img: "/december-challenge.png",
       description: "Reduce water usage by 500 liters",
       received_at: "2020-01-01T09:00:18",
     },
     {
-      name: "december_challenge",
-      title: "December Challenge",
+      name: "monthly_challenge",
+      title: "Monthly Challenge",
+      img: "/monthly-challenge.png",
+      description: "Reduce water usage by 400 liters",
+    },
+    {
+      name: "perfect_week",
+      title: "Perfect Week",
+      img: "/perfect-week.png",
+      description: "Reduce water usage by 400 liters",
+    },
+    {
+      name: "new_record",
+      title: "New Record",
+      img: "/new-record.png",
+      description: "Reduce water usage by 400 liters",
+    },
+    {
+      name: "you_are_the_best",
+      title: "You are the Best",
+      img: "/you-are-the-best.png",
       description: "Reduce water usage by 400 liters",
     },
   ],

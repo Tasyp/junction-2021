@@ -4,18 +4,14 @@ import { NextPageContext } from "next";
 
 import { Apartment, fetchApartment } from "../../lib/api";
 import { takeFirst } from "../../lib/util";
+import { Achievements } from "../../components/Achievements";
 
 interface Props {
   apartment: Apartment;
 }
 
 function AchievementPage({ apartment }: Props) {
-  return (
-    <>
-      <h1>Achievements of #{apartment.apartmentID}</h1>
-      <div>{apartment.badges.length}</div>
-    </>
-  );
+  return <Achievements achievements={apartment.badges} />;
 }
 
 export async function getServerSideProps({ query }: NextPageContext) {

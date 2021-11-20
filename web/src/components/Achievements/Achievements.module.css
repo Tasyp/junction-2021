@@ -1,9 +1,10 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  padding: 0 25px;
 }
 
-.title {
+.heading {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -14,16 +15,17 @@
   margin: 8px 0 32px;
 }
 
-.badgesContainer {
+.achievementsContainer {
   display: flex;
   width: 100%;
   gap: 32px;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
 }
 
-.badgeContainer {
-  width: 50px;
+.achievementContainer {
+  display: flex;
   text-align: left;
 }
 
@@ -31,14 +33,48 @@
   max-width: 100%;
 }
 
-.badgeTitle {
-  font-size: 10px;
-  line-height: 12px;
+.achievementText {
+  padding: 0 0 0 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 19px;
   -moz-hyphens: auto;
   hyphens: auto;
   font-family: Montserrat;
 }
 
-.badgeTitle:first-letter {
-  text-transform: uppercase;
+.description {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.progressContainer {
+  align-self: flex-end;
+  width: 100%;
+  margin-top: auto;
+}
+
+.amount {
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.progress {
+  height: 6px;
+  width: 100%;
+  background-color: #c4c4c4;
+}
+
+.progressBar {
+  background-color: #1abc9c;
+  height: 100%;
 }
