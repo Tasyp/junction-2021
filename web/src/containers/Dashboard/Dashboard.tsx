@@ -15,7 +15,7 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
   return (
     <div className={styles.container}>
       <div className={styles.indexContainer}>
-        <a href="/my-consumption">
+        <a href="/my-consumption/666">
           <span className={styles.indexTitle}>Green index</span>
           <IndexIndicator indexValue={apartment.statistics.green_index} />
         </a>
