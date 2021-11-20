@@ -37,7 +37,10 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
         </div>
       </div>
       <AchievementsContainer badges={apartment.badges} />
-      <div className={styles.chartContainer}>
+      <div
+        onClick={() => (window.location.href = "/my-consumption/666")}
+        className={styles.chartContainer}
+      >
         <BarChart
           className={styles.bar}
           title={"neighborhood"}
