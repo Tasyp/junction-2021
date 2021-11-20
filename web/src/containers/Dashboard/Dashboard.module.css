@@ -22,8 +22,8 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.achievemntsContainer {
-  color: transparent;
+.achievementsContainer {
+  padding: 16px;
   background: rgba(196, 196, 196, 0.1);
   flex-grow: 1;
 }
