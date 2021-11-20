@@ -30,7 +30,7 @@ const AchivementsContainer = () => {
         </a>
       </Link>
     </div>
-  )
+  );
 };
 
 export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
