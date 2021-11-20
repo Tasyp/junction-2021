@@ -1,15 +1,17 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import { apartmentData } from "../../../lib/api";
+import { generateApartment } from "../../../lib/api";
+import { arrayStrToNumber } from "../../../lib/util";
 
 export default function handler(
   request: NextApiRequest,
   response: NextApiResponse
 ) {
-  const { apartment } = request.query;
+  const { apartment, indexLimit } = request.query;
+  const index = Math.min(arrayStrToNumber(indexLimit, 100), 100);
 
   response.status(200).json({
-    ...apartmentData,
+    ...generateApartment(index),
     apartmentID: apartment,
   });
 }

@@ -2,7 +2,7 @@ import classnames from "classnames";
 import React from "react";
 
 import { BarChart, CoinsButton, IndexIndicator } from "../../components";
-import { Apartment, apartmentData } from "../../lib/api";
+import { Apartment } from "../../lib/api";
 
 import { AchievementsContainer } from "../Achievements/Achievements";
 
@@ -36,11 +36,8 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
           <CoinsButton coinCount={apartment.green_coin_count} />
         </div>
       </div>
-      <AchievementsContainer badges={apartmentData.badges} />
-      <div
-        onClick={() => (window.location.href = "/my-consumption/666")}
-        className={styles.chartContainer}
-      >
+      <AchievementsContainer badges={apartment.badges} />
+      <div className={styles.chartContainer}>
         <BarChart
           className={styles.bar}
           title={"neighborhood"}

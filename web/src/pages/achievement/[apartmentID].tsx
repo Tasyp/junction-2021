@@ -17,7 +17,7 @@ function AchievementPage({ apartment }: Props) {
 export async function getServerSideProps({ query }: NextPageContext) {
   const { apartmentID } = query;
 
-  const data = await fetchApartment(takeFirst(apartmentID));
+  const data = await fetchApartment(takeFirst(apartmentID), 100);
   return {
     props: { apartment: data.apartment },
   };
