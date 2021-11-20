@@ -36,7 +36,10 @@ const AchivementsContainer = () => {
 export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.indexContainer}>
+      <div
+        className={styles.indexContainer}
+        onClick={() => (window.location.href = "/coins")}
+      >
         <span className={styles.indexTitle}>Green index</span>
         <IndexIndicator indexValue={apartment.statistics.green_index} />
       </div>
