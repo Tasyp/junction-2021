@@ -30,7 +30,12 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
           from={statistics.neighborhood_index}
           to={100}
         />
-        <BarChart className={styles.bar} title={"country"} from={statistics.country_index} to={100} />
+        <BarChart
+          className={styles.bar}
+          title={"country"}
+          from={statistics.country_index}
+          to={100}
+        />
         <BarChart
           className={styles.bar}
           title={"Sixfold (company-wide)"}
