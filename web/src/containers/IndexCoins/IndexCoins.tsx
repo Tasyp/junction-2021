@@ -37,7 +37,7 @@ const data = [
 export const IndexCoins: React.FunctionComponent = () => {
   return (
     <div className={styles.container}>
-      <span className={styles.title}>Amount of counts</span>
+      <span className={styles.title}>Amount of coins</span>
       <div className={styles.coin}>
         <span className={styles.coinCount}>7523</span>
         <img className={styles.coinIcon} src="/green-index.png" />
