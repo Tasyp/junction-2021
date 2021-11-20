@@ -20,7 +20,7 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
           <IndexIndicator indexValue={apartment.statistics.green_index} />
         </a>
       </div>
-      <AchievementsContainer badges={apartmentData.badges}  />
+      <AchievementsContainer badges={apartmentData.badges} />
       <div className={styles.chartContainer}>
         <BarChart
           className={styles.bar}

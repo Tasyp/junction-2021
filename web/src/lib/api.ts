@@ -1,7 +1,8 @@
 import { NextPageContext } from "next";
 
-import { takeFirst } from "./util";
 import { baseEndpointAPI } from "../config";
+
+import { takeFirst } from "./util";
 
 export const apartmentData = {
   apartmentID: "99",
