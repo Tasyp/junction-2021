@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import { BarChart, IndexIndicator } from "../../components";
 import { Apartment } from "../../lib/api";
@@ -12,6 +13,26 @@ interface Props {
   apartment: Apartment;
 }
 
+const AchivementsContainer = () => {
+  return (
+    <div className={styles.achievementsContainer}>
+      <Link href="/achievement/666">
+        <a>
+          <Badges
+            badges={[
+              { type: Type.DECEMBER_CHALLENGE },
+              { type: Type.MONTHLY_CHALLENGE },
+              { type: Type.PERFECT_WEEK },
+              { type: Type.NEW_RECORD },
+              { type: Type.YOU_ARE_THE_BEST },
+            ]}
+          />
+        </a>
+      </Link>
+    </div>
+  )
+};
+
 export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
   return (
     <div className={styles.container}>
@@ -19,17 +40,7 @@ export const Dashboard: React.FunctionComponent<Props> = ({ apartment }) => {
         <span className={styles.indexTitle}>Green index</span>
         <IndexIndicator indexValue={apartment.statistics.green_index} />
       </div>
-      <div className={styles.achievementsContainer}>
-        <Badges
-          badges={[
-            { type: Type.DECEMBER_CHALLENGE },
-            { type: Type.MONTHLY_CHALLENGE },
-            { type: Type.PERFECT_WEEK },
-            { type: Type.NEW_RECORD },
-            { type: Type.YOU_ARE_THE_BEST },
-          ]}
-        />
-      </div>
+      <AchivementsContainer />
       <div className={styles.chartContainer}>
         <BarChart
           className={styles.bar}

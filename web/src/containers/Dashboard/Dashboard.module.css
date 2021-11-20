@@ -28,6 +28,12 @@
   flex-grow: 1;
 }
 
+.achievementsContainer a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
 .chartContainer {
   background: rgba(196, 196, 196, 0.1);
   padding: 16px;
