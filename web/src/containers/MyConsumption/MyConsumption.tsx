@@ -65,9 +65,7 @@ export const MyConsumptionContainer: React.FunctionComponent<Props> = ({
               Year
             </span>
           </p>
-          <span className={styles.indexCaption}>
-            *Learn more about my consuption index
-          </span>
+
         </div>
       </div>
     </>
