@@ -1,10 +1,7 @@
-.container {
-  margin-bottom: 15px;
-}
-
 .title {
   font-size: 13px;
   text-transform: capitalize;
+  font-family: "Inter", sans-serif;
 }
 
 .chart {
@@ -23,4 +20,5 @@
   justify-content: center;
   padding-right: 10px;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
