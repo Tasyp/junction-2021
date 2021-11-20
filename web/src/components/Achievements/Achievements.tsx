@@ -8,6 +8,7 @@ interface Props {
     name: string;
     title: string;
     img: string;
+    progress: number;
     description?: string;
     received_at?: string;
   }[];
@@ -19,7 +20,7 @@ export const Achievements: React.FunctionComponent<Props> = ({
   <div className={styles.container}>
     <h2 className={styles.heading}>Achievements</h2>
     <div className={styles.achievementsContainer}>
-      {achievements.map(({ name, title, img, description }) => (
+      {achievements.map(({ name, title, img, description, progress }) => (
         <div key={name} className={styles.achievementContainer}>
           <Image
             width={85}
@@ -30,7 +31,7 @@ export const Achievements: React.FunctionComponent<Props> = ({
           <div className={styles.achievementText}>
             <p className={styles.title}>{title}</p>
             <p className={styles.description}>{description}</p>
-            <ProgressBar amount={15} />
+            <ProgressBar amount={progress} />
           </div>
         </div>
       ))}
