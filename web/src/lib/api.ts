@@ -2,13 +2,16 @@ import { NextPageContext } from "next";
 
 import { baseEndpointAPI } from "../config";
 
-import { takeFirst } from "./util";
+import { randomInRange, takeFirst } from "./util";
 
 export const apartmentData = {
   apartmentID: "99",
   people_count: 3,
   statistics: {
     green_index: 30,
+    neighborhood_index: randomInRange(20, 70),
+    country_index: randomInRange(10, 30),
+    company_index: randomInRange(30, 25),
   },
   badges: [
     {
