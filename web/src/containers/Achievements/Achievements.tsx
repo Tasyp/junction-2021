@@ -7,7 +7,13 @@ import { Badges } from "../../components/Badges";
 import styles from "./Achievements.module.css";
 
 interface Props {
-  badges: any ;
+    badges: {
+        name: string;
+        title: string;
+        img: string;
+        description: string;
+        received_at?: string;
+    }[];
 }
 
 export const AchievementsContainer: React.FunctionComponent<Props> = ({badges}) => (
